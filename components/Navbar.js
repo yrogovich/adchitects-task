@@ -30,6 +30,12 @@ const Navbar = () => {
     }
   ];
 
+  const pagesLi = pages.map(({href, name}) =>
+    <li className="navbar__navLink" key={href}>
+      <Link href={href}>{name}</Link>
+    </li>,
+  )
+
   return (
     <div className="navbar">
       <div className="container--wide">
@@ -47,11 +53,7 @@ const Navbar = () => {
 
           <nav className="">
             <ul className="navbar__nav">
-              {pages.map(({name, href}) => {
-                <li className="navbar__navLink" key={href}>
-                  <Link href={href}>{name}</Link>
-                </li>
-              })}
+              {pagesLi}
             </ul>
           </nav>
 
