@@ -18,7 +18,7 @@ export async function getPages() {
   }
 }
 
-export async function getPageInfo(id) {
+export async function getPage(id) {
   try {
     const response = await http.get('page', {
       params: {id},
