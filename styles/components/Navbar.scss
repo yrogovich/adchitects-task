@@ -1,0 +1,147 @@
+@use "sass:math";
+
+$menu-icon-size: 3.5rem;
+$menu-icon-dash-width: 0.9em; //em(4.5rem, 6rem)
+$menu-icon-dash-height: 0.07em; //em(0.3rem, 6rem)
+$menu-icon-dash-gutter: $menu-icon-dash-height * 4;
+$menu-icon-dash-color: $c-text;
+$menu-icon-dash-color-second: $c-text;
+$menu-icon-dash-border-radius: 10rem;
+
+%menu-dash {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: math.div((1em - $menu-icon-dash-width), 2); // center X
+  background-color: $menu-icon-dash-color;
+  width: $menu-icon-dash-width;
+  height: $menu-icon-dash-height;
+  border-radius: $menu-icon-dash-border-radius;
+}
+
+
+.navbar {
+  background-color: $c-white;
+  border-bottom: 1px solid $c-light-gray;
+
+  &__logo {
+    display: block;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5rem 0;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 5rem;
+
+    @include rwd('laptop-small') {
+      display: none;
+    }
+  }
+
+  &__navLink {
+    position: relative;
+
+    &:after {
+      content: '';
+      height: 1px;
+      position: absolute;
+      width: 0;
+      bottom: -3px;
+      left: 0;
+      background-color: $c-text;
+      transition: $tr;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__info {
+    @include rwd('laptop-small') {
+      display: none;
+    }
+  }
+
+  &__burger {
+    flex-shrink: 0;
+    font-size: $menu-icon-size;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    outline: none;
+    user-select: none;
+    touch-action: manipulation;
+    cursor: pointer;
+    z-index: 1001;
+
+    span {
+      @extend %menu-dash;
+      margin-top: math.div($menu-icon-dash-height, -2);
+    }
+
+    &:before {
+      content: "";
+      @extend %menu-dash;
+      margin-top: -$menu-icon-dash-gutter + math.div($menu-icon-dash-height, -2);
+    }
+
+    &:after {
+      content: "";
+      @extend %menu-dash;
+      margin-top: $menu-icon-dash-gutter + math.div($menu-icon-dash-height, -2);
+      left: auto;
+      right: math.div((1em - $menu-icon-dash-width), 2);
+    }
+
+    &:before,
+    &:after {
+      transition: 0.2s ease 0.2s;
+    }
+
+    span {
+      transition: 0.2s;
+
+      &:before {
+        @extend %menu-dash;
+        content: "";
+        transition: inherit;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    &--active {
+      &:before,
+      &:after {
+        transition: 0.2s ease;
+        width: 0;
+      }
+
+      span {
+        transform: rotate(45deg);
+        transition: 0.2s ease 0.2s;
+
+        &:before {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+    @include rwd('laptop-small', true) {
+      display: none;
+    }
+  }
+}
