@@ -4,8 +4,6 @@
 
   $vpw: #{math.div($max-rem * 10, $width-unitless + (2 * $padding)) * 100}vw;
 
-  // @warn ($width-unitless + (2 * $padding));
-
   font-size: max(#{$min-rem}rem, min(#{$vpw}, #{$max-rem}rem)); // sass-lint:disable-line function-name-format
   font-size: clamp(#{$min-rem}rem, #{$vpw}, #{$max-rem}rem); // sass-lint:disable-line no-duplicate-properties
 }
