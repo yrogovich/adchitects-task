@@ -1,0 +1,91 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: $c-text;
+  font-family: $f-prim;
+  font-size: $fs-base;
+  font-size-adjust: 100%;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+*:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+*::-moz-focus-inner {
+  border: 0;
+}
+
+*::placeholder {
+  opacity: 1;
+}
+
+*::selection {
+  background-color: $c-text;
+  color: $c-selection;
+}
+
+// for iOS
+input,
+textarea {
+  border-radius: 0;
+  appearance: none;
+}
+
+input {
+  &[type='checkbox'] {
+    appearance: checkbox;
+  }
+
+  &[type='radio'] {
+    appearance: radio;
+  }
+
+  &[disabled='disabled'],
+  &[disabled],
+
+  &:disabled {
+    opacity: 1;
+  }
+}
+
+select { // for iOS
+  border-radius: 0;
+  text-indent: .01px;
+  text-overflow: '';
+  appearance: none;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  image-rendering: optimizeQuality;
+  image-rendering: -webkit-optimize-contrast;
+}
