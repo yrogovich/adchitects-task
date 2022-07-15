@@ -5,10 +5,12 @@
 @import '_setup/global';
 
 @import '_helpers/rwd';
-@import '_helpers/typo';
 @import '_helpers/fluidFont';
+@import '_helpers/typo';
 
 @import 'layouts/container';
 
 @import 'components/Button';
 @import 'components/Navbar';
+
+@import 'pages/index';
