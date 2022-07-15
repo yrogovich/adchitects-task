@@ -1,3 +1,102 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "extends": ["eslint-config-airbnb-base", "plugin:react/recommended", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "arrow-parens": [
+      2,
+      "as-needed",
+      {
+        "requireForBlockBody": true
+      }
+    ],
+    "brace-style": "off",
+    "camelcase": [
+      "error",
+      {
+        "properties": "always"
+      }
+    ],
+    "class-methods-use-this": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    "consistent-return": "off",
+    "curly": ["error", "multi-line"],
+    "indent": [
+      "error",
+      2,
+      {
+        "ignoreComments": true
+      }
+    ],
+    "key-spacing": "off",
+    "linebreak-style": ["error", "unix"],
+    "max-classes-per-file": ["error", 2],
+    "max-len": [
+      "error",
+      {
+        "code": 100,
+        "tabWidth": 2,
+        "ignoreComments": true
+      }
+    ],
+    "no-console": "off",
+    "no-continue": "off",
+    "no-else-return": "off",
+    "no-magic-numbers": [
+      "error",
+      {
+        "ignore": [-1, 0, 1, 2, 100, 1000]
+      }
+    ],
+    "no-multi-spaces": [
+      "error",
+      {
+        "exceptions": {
+          "AssignmentExpression": true,
+          "Property": true,
+          "VariableDeclarator": true
+        }
+      }
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 2,
+        "maxEOF": 1
+      }
+    ],
+    "no-new": "off",
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "no-plusplus": "off",
+    "no-unused-expressions": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^[A-Z][a-zA-Z]{3,}$"
+      }
+    ],
+    "padded-blocks": "off",
+    "quote-props": ["error", "as-needed"],
+    "radix": ["error", "as-needed"],
+    "no-undef": "off",
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-uses-react": 0
+  }
 }
