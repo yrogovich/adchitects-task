@@ -25,6 +25,25 @@ yarn start
 yarn lint
 ```
 
+## Commit tags
+`[global]` - project global changes, config updates
+
+`[npm]` - add/remove/update packages
+
+`[docs]` - update docs, readme
+
+`[style]` - style updates
+
+`[rwd]` - adaptive updates
+
+`[api]` - api updates
+
+`[public]` - public images, fonts and etc updates
+
+`[page]` - page updates
+
+`[component]` - component updates
+
 ## Versions
 | Tool | Version  |
 |------|----------|
