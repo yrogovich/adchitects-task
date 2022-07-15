@@ -1,0 +1,29 @@
+.header {
+  min-height: 38rem;
+  padding-top: 13rem;
+  padding-bottom: 15rem;
+
+  @include rwd('tablet') {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2.4rem;
+
+    @include rwd('tablet') {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__title {
+    @include t-48-64;
+  }
+  &__image {
+    img {
+      aspect-ratio: 4/3;
+    }
+  }
+}
