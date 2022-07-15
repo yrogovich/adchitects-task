@@ -1,0 +1,21 @@
+.button {
+  cursor: pointer;
+  transition: $trM;
+  border-radius: 2.4rem;
+  min-width: 19.2rem;
+  padding: 1.2rem 2rem;
+  font-size: 1.6rem;
+
+  &--default {
+    background-color: $c-purple;
+  }
+
+  &:hover {
+    filter: saturate(2);
+  }
+
+  &:active {
+    transition: $trS;
+    transform: scale(.95);
+  }
+}
