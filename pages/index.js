@@ -1,6 +1,20 @@
+import Image from 'next/image'
 import Navbar from "../components/Navbar";
+import {getPageContentByUrl} from './api/cms'
 
-export default function Home() {
+export async function getStaticProps() {
+  const pageContent = await getPageContentByUrl()
+
+  return {
+    props: {
+      sections: pageContent.sections,
+    },
+  }
+}
+
+function Home({sections}) {
+  const header = sections.find(section => section.type === 'hero')
+
   return (
     <>
       <Navbar />
@@ -8,9 +22,15 @@ export default function Home() {
         <header className="header">
           <div className="container">
             <div className="header__row">
-              <div className="header__title">In oculis quidem rerum facilis est et aperta.</div>
+              <div className="header__title">{header.text}</div>
               <div className="header__image">
-                <img src="https://source.unsplash.com/random" />
+                <Image
+                  src={header.img}
+                  layout="responsive"
+                  alt="hero image"
+                  width={516}
+                  height={384}
+                />
               </div>
             </div>
           </div>
@@ -19,3 +39,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home
