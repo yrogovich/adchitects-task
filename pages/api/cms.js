@@ -20,11 +20,21 @@ export async function getPages() {
 
 export async function getPage(id) {
   try {
-    const response = await http.get('page', {
-      params: {id},
-    })
+    const response = await http.get(`page/${id}`)
 
     return response.data
+  } catch (error) {
+    return error
+  }
+}
+
+export async function getPageContentByUrl(url = '/') {
+  try {
+    const response = await http.get('pages/')
+    const pages = response.data;
+    const page = pages.find(item => item.url === url)
+
+    return await getPage(page.id)
   } catch (error) {
     return error
   }
