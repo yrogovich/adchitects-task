@@ -31,7 +31,7 @@ $menu-icon-dash-border-radius: 10rem;
   &__row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 7%;
     padding: 2.5rem 0;
   }
 
@@ -39,7 +39,7 @@ $menu-icon-dash-border-radius: 10rem;
     display: flex;
     gap: 5rem;
 
-    @include rwd('laptop-small') {
+    @include rwd('tablet') {
       display: none;
     }
   }
@@ -66,12 +66,14 @@ $menu-icon-dash-border-radius: 10rem;
   }
 
   &__info {
-    @include rwd('laptop-small') {
+    margin-left: auto;
+    @include rwd('tablet') {
       display: none;
     }
   }
 
   &__burger {
+    margin-left: auto;
     flex-shrink: 0;
     font-size: $menu-icon-size;
     width: 1em;
@@ -140,7 +142,7 @@ $menu-icon-dash-border-radius: 10rem;
       }
     }
 
-    @include rwd('laptop-small', true) {
+    @include rwd('tablet', true) {
       display: none;
     }
   }
