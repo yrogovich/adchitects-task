@@ -5,6 +5,12 @@
   line-height: math.div(24, 16);
 }
 
+@mixin t-24-40 {
+  @include fluid-font(1.8, 2.4);
+  line-height: math.div(40, 24);
+}
+
+
 @mixin t-48-64 {
   @include fluid-font(3.2, 4.8);
   line-height: math.div(64, 48);
