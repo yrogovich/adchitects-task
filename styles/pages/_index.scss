@@ -29,3 +29,37 @@
     }
   }
 }
+
+.testimonial {
+  padding: 13rem 0;
+  background-color: $c-dark-brown;
+  color: $c-white;
+
+  @include rwd('tablet') {
+    padding: 5rem 0;
+  }
+
+  &__quote + &__text {
+    margin-top: 6.8rem;
+    @include rwd('tablet') {
+      margin-top: 3rem;
+    }
+  }
+
+  &__text + &__author {
+    margin-top: 9.6rem;
+    @include rwd('tablet') {
+      margin-top: 4rem;
+    }
+  }
+
+  &__text {
+    @include t-24-40;
+    max-width: 95rem;
+  }
+
+  &__author {
+    @include t-24-40;
+    color: $c-gray;
+  }
+}
