@@ -1,0 +1,40 @@
+.newsletter {
+  padding: 13rem 0;
+  color: $c-dark-brown;
+  text-align: center;
+  @include rwd('tablet') {
+    padding: 5rem 0;
+  }
+
+  &__row {
+    max-width: 62.5rem;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include t-40-56;
+    text-align: center;
+    margin-bottom: 6.4rem;
+    @include rwd('tablet') {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  &__message {
+    margin-top: 4.5rem;
+    font-size: 1.4rem;
+
+    &--success {
+      color: $c-lime;
+    }
+    &--error {
+      color: $c-red;
+    }
+  }
+}
