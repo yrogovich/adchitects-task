@@ -23,7 +23,7 @@ function Home({sections}) {
       <Navbar />
       <main>
         <Header text={header.text} img={header.img} />
-        <Testimonial text={testimonial.text} img={testimonial.author} />
+        <Testimonial text={testimonial.text} author={testimonial.author} />
         <Newsletter />
       </main>
     </>
