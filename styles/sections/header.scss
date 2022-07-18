@@ -2,6 +2,8 @@
   min-height: 38rem;
   padding-top: 13rem;
   padding-bottom: 15rem;
+  overflow: hidden;
+
   @include rwd('tablet') {
     padding-top: 5rem;
     padding-bottom: 5rem;

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import {useState} from 'react'
 import Input from '../Input'
 import Button from '../Button'
@@ -28,7 +29,12 @@ const Newsletter = () => {
     <>
       <section className="newsletter">
         <div className="container">
-          <div className="newsletter__row">
+          <motion.div
+            className="newsletter__row"
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1}}
+            transition={{ duration: 1.5, type: "spring" }}
+          >
             <div className="newsletter__title">Sign up for Newsletter</div>
             <form onSubmit={newsletterHandler}>
               <div className="newsletter__form">
@@ -39,9 +45,10 @@ const Newsletter = () => {
             <div
               className={`newsletter__message newsletter__message--${newsletterStatus}`}
             >{newsletterMsg}</div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </section
+        >
     </>
   )
 }

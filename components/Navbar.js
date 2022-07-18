@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import {useState} from 'react'
@@ -37,7 +38,12 @@ const Navbar = () => {
   )
 
   return (
-    <div className="navbar">
+    <motion.div
+      className="navbar"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1}}
+      transition={{ duration: 1, type: "spring" }}
+    >
       <div className="container--wide">
         <div className="navbar__row">
           <div className="navbar__logo">
@@ -66,7 +72,7 @@ const Navbar = () => {
           ><span></span></div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
