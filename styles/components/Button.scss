@@ -6,6 +6,10 @@
   padding: 1.2rem 2rem;
   @include t-16-24;
 
+  @include rwd('tablet') {
+    min-width: unset;
+  }
+
   &--default {
     background-color: $c-purple;
   }
