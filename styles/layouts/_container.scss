@@ -1,6 +1,6 @@
-$gridWidth       : 1000px !default;
+$gridWidth       : 1050px !default;
 $gridWidthWide   : 1400px !default;
-$gridGutter      : 20px   !default;
+$gridGutter      : 60px   !default;
 
 .container,
 .container--wide {
@@ -9,6 +9,10 @@ $gridGutter      : 20px   !default;
   margin-right: auto;
   padding-left: $gridGutter;
   padding-right: $gridGutter;
+  @include rwd('phone') {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .container {
