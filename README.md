@@ -42,6 +42,8 @@ yarn lint
 
 `[page]` - page updates
 
+`[section]` - section updates
+
 `[component]` - component updates
 
 ## Versions
