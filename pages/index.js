@@ -14,17 +14,27 @@ export async function getStaticProps() {
   }
 }
 
-function Home({sections}) {
-  const header        = sections.find(section => section.type === 'hero')
-  const testimonial   = sections.find(section => section.type === 'testimonial')
+function sectionsPrint(sections) {
+  return sections.map((section, i) => {
+    switch (section.type) {
+    case 'hero':
+      return <Header text={section.text} img={section.img} key={section.type + i}/>
+    case 'newsletter':
+      return <Newsletter key={section.type + i}/>
+    case 'testimonial':
+      return <Testimonial text={section.text} author={section.author} key={section.type + i}/>
+    default:
+      return null
+    }
+  })
+}
 
+function Home({sections}) {
   return (
     <>
       <Navbar />
       <main>
-        <Header text={header.text} img={header.img} />
-        <Testimonial text={testimonial.text} author={testimonial.author} />
-        <Newsletter />
+        {sectionsPrint(sections)}
       </main>
     </>
   )
