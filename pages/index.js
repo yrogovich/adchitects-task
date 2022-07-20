@@ -4,18 +4,21 @@ import {getPageContentByUrl} from './api/cms'
 import Header from '../components/sections/Header'
 import Newsletter from '../components/sections/Newsletter'
 import Testimonial from '../components/sections/Testimonial'
+import ResponseError from '../components/sections/ResponseError'
 
 export async function getStaticProps() {
   const pageContent = await getPageContentByUrl()
 
   return {
     props: {
-      sections: pageContent.sections,
+      sections: pageContent.sections || null,
     },
   }
 }
 
 function sectionsPrint(sections) {
+  if (!sections) return <ResponseError />
+
   return sections.map((section, i) => {
     switch (section.type) {
     case 'hero':
@@ -42,7 +45,7 @@ function Home({sections}) {
 }
 
 Home.propTypes = {
-  sections: PropTypes.arrayOf(PropTypes.object).isRequired,
+  sections: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Home

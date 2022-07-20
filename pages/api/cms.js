@@ -1,10 +1,10 @@
 import axios from 'axios'
 
 const http = axios.create({
-  baseURL: process.env.CMS_API_HOST,
+  baseURL: process.env.NEXT_PUBLIC_CMS_API_HOST,
   auth:    {
-    username: process.env.CMS_API_USER,
-    password: process.env.CMS_API_PASSWORD,
+    username: process.env.NEXT_PUBLIC_CMS_API_USER,
+    password: process.env.NEXT_PUBLIC_CMS_API_PASSWORD,
   },
 })
 
