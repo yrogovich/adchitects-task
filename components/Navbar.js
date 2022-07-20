@@ -28,7 +28,7 @@ const Navbar = () => {
     {
       name: 'About',
       href: '/about',
-    }
+    },
   ];
 
   const pagesLi = pages.map(({href, name}) =>
@@ -64,7 +64,7 @@ const Navbar = () => {
           </nav>
 
           <div className="navbar__info">
-            <Button href="#contact">Contact us</Button>
+            <Button href="#contact" >Contact us</Button>
           </div>
 
           <div className={`navbar__burger ${isActiveBurger ? 'navbar__burger--active' : ''}`}

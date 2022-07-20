@@ -13,7 +13,7 @@ const Testimonial = ({text, author}) => {
                 width={48} height={40}
               />
             </div>
-            <div className="testimonial__text">{text}</div>
+            <blockquote className="testimonial__text">{text}</blockquote>
             <div className="testimonial__author">{author}</div>
           </div>
         </div>

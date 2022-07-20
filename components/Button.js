@@ -6,8 +6,8 @@ const Button = ({href, type = 'button', theme = 'default', children}) => {
   let button
 
   if (href) {
-    button = <a href={href}>
-      <button className={classes.join(' ')}>{children}</button>
+    button = <a href={href} className={classes.join(' ')}>
+      {children}
     </a>
   } else {
     button = <button className={classes.join(' ')}>{children}</button>

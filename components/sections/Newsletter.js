@@ -35,7 +35,7 @@ const Newsletter = () => {
             whileInView={{ y: 0, opacity: 1}}
             transition={{ duration: 1.5, type: "spring" }}
           >
-            <div className="newsletter__title">Sign up for Newsletter</div>
+            <h2 className="newsletter__title">Sign up for Newsletter</h2>
             <form onSubmit={newsletterHandler}>
               <div className="newsletter__form">
                 <Input type="email" placeholder="Type your email" required={true}/>
