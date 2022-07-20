@@ -1,0 +1,10 @@
+.responseError {
+  padding: 13rem 0;
+  text-align: center;
+  @include rwd('tablet') {
+    padding: 5rem 0;
+  }
+  &__title {
+    @include t-48-64;
+  }
+}
