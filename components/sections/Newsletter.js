@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import {useState} from 'react'
+import {useRef, useState} from 'react'
 import Input from '../Input'
 import Button from '../Button'
 import {subcribeToNewsletter} from '../../pages/api/cms'
@@ -7,12 +7,13 @@ import {subcribeToNewsletter} from '../../pages/api/cms'
 const Newsletter = () => {
   const [newsletterStatus, setNewsletterStatus] = useState('');
   const [newsletterMsg, setNewsletterMsg]       = useState('');
+  const emailRef = useRef();
 
   const newsletterHandler = async (e) => {
     e.preventDefault()
 
-    const email    = e.target.querySelector('input[type="email"]').value
-    const response = await subcribeToNewsletter(email)
+    const {value}  = emailRef.current
+    const response = await subcribeToNewsletter(value)
 
     switch (response.status) {
     case 200:
@@ -38,7 +39,12 @@ const Newsletter = () => {
             <h2 className="newsletter__title">Sign up for Newsletter</h2>
             <form onSubmit={newsletterHandler}>
               <div className="newsletter__form">
-                <Input type="email" placeholder="Type your email" required={true}/>
+                <Input
+                  type="email"
+                  placeholder="Type your email"
+                  required={true}
+                  setRef={emailRef}
+                />
                 <Button>Submit</Button>
               </div>
             </form>
