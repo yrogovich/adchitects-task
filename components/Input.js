@@ -1,7 +1,9 @@
+import PropTypes from 'prop-types'
+
 const Input = ({
   type = 'text',
   theme = 'default',
-  placeholder = null,
+  placeholder = '',
   required = true,
 }) => {
   const classes = [
@@ -22,5 +24,12 @@ const Input = ({
     </>
   )
 }
+
+Input.propTypes = {
+  type: PropTypes.string,
+  theme: PropTypes.string,
+  placeholder: PropTypes.string,
+  required: PropTypes.bool,
+};
 
 export default Input

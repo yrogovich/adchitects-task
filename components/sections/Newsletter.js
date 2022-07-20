@@ -47,8 +47,7 @@ const Newsletter = () => {
             >{newsletterMsg}</div>
           </motion.div>
         </div>
-      </section
-        >
+      </section>
     </>
   )
 }

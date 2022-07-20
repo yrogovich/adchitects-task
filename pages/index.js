@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Navbar from "../components/Navbar";
 import {getPageContentByUrl} from './api/cms'
 import Header from '../components/sections/Header'
@@ -39,5 +40,9 @@ function Home({sections}) {
     </>
   )
 }
+
+Home.propTypes = {
+  sections: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default Home

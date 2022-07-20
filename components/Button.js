@@ -1,4 +1,6 @@
-const Button = ({href, type = 'button', theme = 'default', children}) => {
+import PropTypes from 'prop-types'
+
+const Button = ({href, theme = 'default', children}) => {
   const classes = [
     'button',
     `button--${theme}`,
@@ -17,5 +19,11 @@ const Button = ({href, type = 'button', theme = 'default', children}) => {
     <>{button}</>
   )
 }
+
+Button.propTypes = {
+  href: PropTypes.string,
+  theme: PropTypes.string,
+  children: PropTypes.node,
+};
 
 export default Button
