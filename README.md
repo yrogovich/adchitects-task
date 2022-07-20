@@ -14,8 +14,9 @@ Teksty i zdjęcia w poszczególnych sekcjach powinny zostać wygenerowane na pod
 ## Quick setup
 1. Clone repository `gh repo clone yrogovich/adchitects-task`
 2. Install dependencies `yarn install`
-2. Run develompent server `yarn dev`
-3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Rename `.env.local.example` to `.env.local`
+4. Run develompent server `yarn dev`
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 Availible commands:
 ```bash
