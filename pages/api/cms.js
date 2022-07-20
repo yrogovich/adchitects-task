@@ -1,10 +1,10 @@
 import axios from 'axios'
 
 const http = axios.create({
-  baseURL: 'https://adchitects-cms.herokuapp.com/',
+  baseURL: process.env.CMS_API_HOST,
   auth:    {
-    username: 'adchitects',
-    password: 'jsrulezzz',
+    username: process.env.CMS_API_USER,
+    password: process.env.CMS_API_PASSWORD,
   },
 })
 
