@@ -11,6 +11,11 @@ Teksty i zdjęcia w poszczególnych sekcjach powinny zostać wygenerowane na pod
 - [Design](https://marvelapp.com/prototype/16agg53e/screen/84315901/handoff)
 - [API Documentation](docs/api-docs.pdf)
 
+## Optimization
+[Run live google page speed test](https://pagespeed.web.dev/report?url=https%3A%2F%2Fadchitects-task.vercel.app%2F&form_factor=desktop)
+
+![alt text](./public/lighthouse.png)
+
 ## Quick setup
 1. Clone repository `gh repo clone yrogovich/adchitects-task`
 2. Install dependencies `yarn install`
