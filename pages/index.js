@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import Head from 'next/head'
 import Navbar from "../components/Navbar";
 import {getPageContentByUrl} from './api/cms'
 import Header from '../components/sections/Header'
@@ -36,6 +37,19 @@ function sectionsPrint(sections) {
 function Home({sections}) {
   return (
     <>
+      <Head>
+        <title>Adchitects test task</title>
+        <meta
+          name="description"
+          content="Adchitects test task on JS developer position"
+          key="desc"
+        />
+        <meta property="og:title" content="Adchitects test task" />
+        <meta
+          property="og:description"
+          content="Adchitects test task on JS developer position"
+        />
+      </Head>
       <Navbar />
       <main>
         {sectionsPrint(sections)}
