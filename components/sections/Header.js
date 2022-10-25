@@ -25,6 +25,7 @@ const Header = ({text, img}) => (
                 layout="responsive"
                 alt="hero image"
                 width={516} height={384}
+                priority
               />
             </motion.div>
           </div>
